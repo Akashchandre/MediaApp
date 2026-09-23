@@ -70,6 +70,11 @@ client routes are introduced later.
 
 ## Key handling and troubleshooting
 
+- To remove the badge overlapping mobile media, open **Project configuration >
+  General > Powered by Netlify badge**, turn it off, and save. This takes effect
+  on the next request without redeploying. The badge is injected by Netlify in
+  an isolated frame, not shipped by this app; app CSS is not the fix. See
+  [Netlify's badge settings](https://docs.netlify.com/manage/projects/powered-by-netlify-badge/).
 - Enter your Pexels API key in the deployed connection screen. Do not put it in
   `netlify.toml`, a `VITE_*` variable, source code, or build logs. A key in a static
   bundle is public; runtime entry is visible to the browser user as well.

@@ -15,7 +15,29 @@ These are behavioral tests, not a coverage-percentage or security-audit claim.
 jsdom mocks dialog methods, dimensions, and video playback. Native tests use a
 React hook harness, not a React Native renderer or device.
 
-## Browser acceptance checklist (not yet completed)
+## Browser review evidence (2026-09-23)
+
+Reviewed the deployed site at https://moonlit-shortbread-e4f2c7.netlify.app/
+in isolated headless Chrome using a runtime-only key. Its assets matched the
+previous local production build. Photos/videos loaded, lightbox next/Escape/focus
+restoration worked, and switching reels paused the prior video. Browser storage
+was empty and no runtime exceptions were reported. This was a viewport-emulated
+review, not physical-device testing or a complete acceptance audit.
+
+After mobile fixes, checked the local production preview at 320, 390, 600, 768,
+and 1440px widths (video layouts at 320, 390, and 1440). At 390px, first photos
+moved from approximately 567px to 415px down the page, and reels from 662px to
+471px. Credits are 13px, mobile inputs 16px, and navigation/suggestion targets
+44px high. No page-level horizontal overflow was observed; the suggestion row
+intentionally scrolls independently. Lightbox focus/close and active-video
+playback passed again. All 65 tests and builds passed after the edits.
+
+The new build has not been uploaded. The fixed Netlify badge remains a dashboard
+setting: turn it off using [the deployment guide](./deployment.md). Bottom safe
+area spacing improves footer access but cannot prevent a fixed badge overlay
+while scrolling. No badge setting was changed by the agent.
+
+## Browser acceptance checklist (full pass still pending)
 
 Use the production preview and then the Netlify HTTPS URL. Record browser,
 viewport, deployed commit, and results; do not put keys in screenshots or logs.
@@ -50,8 +72,9 @@ viewport, deployed commit, and results; do not put keys in screenshots or logs.
   availability require real-browser checks. No completed-save guarantee.
 - Native deliverables are reusable wrappers/hooks and fixtures, not a complete
   mobile application; no Metro/device/emulator verification or npm publication.
-- No live deployment, cloud build, real-key integration, dependency vulnerability
-  audit, or independent accessibility audit has been performed in this session.
+- The user deployed manually; the review above tested live media on that site.
+  No Netlify cloud build, physical-device test, dependency vulnerability audit,
+  or independent accessibility audit has been performed in this session.
 
 ## Submission evidence
 

@@ -61,7 +61,8 @@ The root `netlify.toml` uses repository-root installation, Node 24,
 variable is needed. Do not set the base directory to `apps/web`.
 
 Follow [the Netlify guide](./docs/deployment.md) for importing the repository,
-local production checks, and troubleshooting. No site has been deployed yet.
+local production checks, and troubleshooting. The user deployed the demo at
+https://moonlit-shortbread-e4f2c7.netlify.app/; later local fixes require re-upload.
 The full [SDK reference](./docs/sdk.md) and
 [verification/submission checklist](./docs/verification.md) cover behavior,
 limitations, and remaining acceptance checks.

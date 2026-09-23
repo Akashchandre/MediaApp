@@ -7,7 +7,7 @@ Last updated: 2026-09-23
 - Latest completed phase: Phase 6 — AI skills and integration rehearsal
 - Current phase: Phase 8 — Netlify readiness prepared; cloud build and live-browser acceptance pending
 - Overall: In progress
-- Blockers: No local verification blocker. Netlify repository/site connection and browser checks with a real Pexels key remain.
+- Blockers: No local verification blocker. User deployed manually; mobile fixes need re-upload, badge removal needs a Netlify dashboard change, and full acceptance checks remain.
 
 ## Phase status
 
@@ -31,10 +31,10 @@ Last updated: 2026-09-23
 
 ## Next action
 
-For the simplest deployment, run `npm run build` and upload `apps/web/dist`
-to Netlify Drop using `docs/deployment.md`. Repository-connected deployment
-remains optional. Run the browser checklist in `docs/verification.md` before
-marking live deployment or Phase 7 acceptance complete.
+Upload the rebuilt `apps/web/dist` to the existing Netlify site's Deploys page,
+turn off the Powered by Netlify badge in Project configuration > General,
+and finish the browser checklist in `docs/verification.md`. Repository-connected
+deployment remains optional; no new site needs to be created.
 
 ## Phase 3 completion
 
@@ -147,3 +147,18 @@ marking live deployment or Phase 7 acceptance complete.
 - Added simple build-and-upload instructions for the user's preferred manual
   deployment workflow. Live API/browser acceptance, a verified deployment URL,
   and a credential-free implementation transcript remain submission tasks.
+
+## Mobile UI fixes after deployment review
+
+- Reviewed the user's deployed site in headless Chrome with live photo/video data.
+- Enlarged mobile credits/labels and search input, shortened the explorer heading,
+  made suggestions a single scrollable row, and increased navigation touch targets.
+- Added long-text/video-caption wrapping and footer safe-area spacing. Preserved
+  the skills' fixed-height reel pages and native-dialog integration contracts.
+- At 390px wide, gallery/reel content now starts around 415px/471px versus
+  567px/662px before. No page-level horizontal overflow in tested widths.
+- Confirmed local production lightbox close/focus and video play/pause transitions.
+- Full verification passes: 65 tests in 8 files, lint, types, boundaries, builds.
+- Netlify's injected badge cannot be fixed by app spacing alone. Added the official
+  dashboard switch instructions; the user's account setting was not changed.
+- Changes are uncommitted and not redeployed; `apps/web/dist` contains the new build.

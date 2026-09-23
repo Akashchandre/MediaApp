@@ -11,7 +11,7 @@ export function App({ client, fetch: fetcher }) {
     <header className="topbar">
       <a className="brand" href="./" aria-label="Frameflow home"><span aria-hidden="true">▧</span> frameflow<span className="brand-dot">.</span></a>
       <div className="topbar-right">
-        <a href="https://www.pexels.com" target="_blank" rel="noreferrer">Powered by Pexels ↗</a>
+        <a href="https://www.pexels.com" target="_blank" rel="noreferrer"><span className="attribution-prefix">Powered by </span>Pexels ↗</a>
         {connected && <button className="quiet-button" onClick={() => {
           setConnected(false); setApiKey("");
         }}>Disconnect</button>}

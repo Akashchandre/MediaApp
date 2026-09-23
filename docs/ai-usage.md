@@ -115,3 +115,21 @@ The configured `npm run verify` command passed locally: 65 tests in 8 files,
 lint, types, boundaries, and production builds. Checked local documentation
 links and diff whitespace. This run used Node 20.19.4 on Windows; the configured
 Node 24/Linux Netlify build and real-browser/live-key checks remain pending.
+
+## Deployed UI review and mobile polish
+
+The user manually deployed and requested a live UI review, then authorized fixes.
+An isolated headless Chrome session checked the deployed page and live media.
+The runtime key was not added to repository files or screenshots. The main agent
+reread both local integration skills before editing consumer markup/CSS; reel
+page geometry, prop-getters, and wrapper-managed data behavior were preserved.
+
+Updated mobile typography, heading/toolbar spacing, scrollable suggestions,
+44px navigation targets, wrapping for long text and video captions, and footer
+safe-area spacing. Consulted the official Netlify badge documentation and added
+the dashboard removal instructions instead of claiming CSS could remove it.
+
+`npm run verify` passed with 65 tests in 8 files and production builds. Measured
+the new production preview in Chrome; results and limitations are recorded in
+`docs/verification.md`. No redeploy, commit, or Netlify account change was made
+during this fix. The rebuilt `apps/web/dist` is ready for manual upload.
