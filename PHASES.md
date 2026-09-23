@@ -25,10 +25,10 @@
 
 ## Phase 4 — Headless web UI
 
-- [ ] Implement grid prop-getters and load-more behavior.
-- [ ] Implement accessible lightbox state, keyboard controls, focus trap, and restoration.
-- [ ] Implement reel scroll-snap props and active-item detection.
-- [ ] Test all hooks with fixture data only.
+- [x] Implement grid prop-getters and load-more behavior.
+- [x] Implement accessible lightbox state, keyboard controls, focus trap, and restoration.
+- [x] Implement reel scroll-snap props and active-item detection.
+- [x] Test all hooks with fixture data only.
 
 ## Phase 5 — Headless native UI
 

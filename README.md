@@ -27,3 +27,7 @@ npm run verify
 The demo asks for a Pexels API key at runtime and retains it only in memory. A browser-only app cannot keep a shared API key secret.
 
 See [PHASES.md](./PHASES.md), [PROGRESS.md](./PROGRESS.md), and [docs/architecture.md](./docs/architecture.md).
+
+Phases 1–4 are complete. The app currently shows a foundation screen; the media
+interface is integrated in Phase 7. Library usage is documented in
+[wrapper docs](./docs/wrappers.md) and [headless UI docs](./docs/components.md).

@@ -4,8 +4,8 @@ Last updated: 2026-09-23
 
 ## Current status
 
-- Latest completed phase: Phase 3 — Platform wrappers
-- Next phase: Phase 4 — Headless web UI (not started)
+- Latest completed phase: Phase 4 — Headless web UI
+- Next phase: Phase 5 — Headless native UI (not started)
 - Overall: In progress
 - Blockers: None
 
@@ -16,7 +16,7 @@ Last updated: 2026-09-23
 | 1. Setup and contracts | Complete | Workspace, contracts, core compilation, app production build |
 | 2. Core SDK | Complete | 7 mocked SDK tests; no live API-key validation yet |
 | 3. Platform wrappers | Complete | 22 shared behavior tests plus export parity; lint, typecheck, boundaries, builds pass |
-| 4. Headless web UI | Not started | — |
+| 4. Headless web UI | Complete | 11 fixture tests; full verification passes with 41 tests |
 | 5. Headless native UI | Not started | — |
 | 6. AI skills | Not started | — |
 | 7. Web application | Not started | — |
@@ -31,7 +31,7 @@ Last updated: 2026-09-23
 
 ## Next action
 
-Begin Phase 4 when requested: independent grid, lightbox, and reel hooks for web.
+Begin Phase 5 when requested: native grid, lightbox, and reel prop-getters.
 
 ## Phase 3 completion
 
@@ -44,3 +44,21 @@ Begin Phase 4 when requested: independent grid, lightbox, and reel hooks for web
 - Verification: `npm run verify` passed with 30 tests in 3 files and production builds.
 - Native hooks run through the same React test harness in jsdom; no device/emulator validation yet.
 - The web app is still the Phase 1 shell. Visible media features arrive in Phases 4 and 7.
+
+## Phase 4 completion
+
+- Exported `useMediaGrid`, `useMediaLightbox`, and `useMediaReel` in plain JavaScript.
+- Generic data and callbacks only; no SDK/wrapper imports or shipped markup/styles.
+- Grid selection, explicit Load More, loading accessibility state, and pending-request guard.
+- Controlled native-dialog lightbox with Escape/cancel, previous/next arrows,
+  Tab containment, editing-key protection, and opener focus restoration.
+- Reel active detection from scroll position, keyboard paging, resize handling,
+  bounds checks, and observer cleanup. Consumer CSS supplies equal-height snap pages.
+- Prop-getters compose consumer event handlers and refs; preventDefault cancels internal behavior.
+- Added fixture-only examples, public contracts, styling requirements, and limitations in `docs/components.md`.
+- Verification: `npm run verify` passed: 41 tests in 4 files, lint, typecheck,
+  dependency boundaries, and core/web production builds.
+- Tests mock missing jsdom dialog/layout APIs. Real-browser top-layer behavior,
+  CSS snapping, and video playback remain integration checks for later phases.
+- The app still shows its foundation screen; Phase 4 delivers library behavior.
+  The visible media application is scheduled for Phase 7.
