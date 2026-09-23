@@ -21,15 +21,35 @@ The core is TypeScript. Wrappers, UI libraries, and the web app use JavaScript/J
 ```bash
 npm install
 npm run dev
-npm run verify
 ```
 
-The demo asks for a Pexels API key at runtime and retains it only in memory. A browser-only app cannot keep a shared API key secret.
+Open the Local URL printed by Vite (usually `http://localhost:5173`). The
+connection screen is visible without a key. Enter a Pexels API key there to
+browse live photos/videos; an account password is not an API key.
+The key stays in memory and is cleared on disconnect or refresh. A browser-only
+app cannot keep a shared API key secret.
+
+```bash
+npm run verify   # lint, types, boundaries, tests, and production build
+npm run build   # production build only; web output is apps/web/dist
+npm run preview -w @headless-media/web  # serve the production build locally
+```
+
+Keep the dev command running while browsing. If port 5173 is occupied, use the
+actual URL printed in the terminal. Restart the dev server if it still shows
+the old foundation screen.
 
 See [PHASES.md](./PHASES.md), [PROGRESS.md](./PROGRESS.md), and [docs/architecture.md](./docs/architecture.md).
 
-Phases 1–5 are complete. The app currently shows a foundation screen; the media
-interface is integrated in Phase 7. Library usage is documented in
+Phases 1–6 are complete. Phase 7 implements the Frameflow web interface: search,
+photo grid/lightbox, video reels, pagination, and session activity. Automated
+verification passes with 65 tests and production builds; live-browser checks
+remain pending. Library usage is documented in
 [wrapper docs](./docs/wrappers.md) and [headless UI docs](./docs/components.md).
 See [native UI docs](./docs/components-native.md) for FlatList/Modal contracts
 and the local-data native fixture screen.
+
+Before building the full app, read the repository-local
+[data skill](./skills/media-data/SKILL.md) and [UI skill](./skills/media-ui/SKILL.md).
+[AI usage evidence](./docs/ai-usage.md) records the tested integration rehearsal,
+Phase 7 implementation, and its pending verification.

@@ -1,6 +1,18 @@
 # Project Working Rules
 
-This file records the development rules used while building the sample. The two deliverable AI skills live separately under `skills/` and will describe the final public APIs.
+This file records the development rules used while building the sample.
+The two deliverable AI skills live under `skills/` and describe the implemented public APIs.
+
+## Consumer skills
+
+- [media-data](skills/media-data/SKILL.md): provider/key setup, actual hooks, pagination, errors, and events.
+- [media-ui](skills/media-ui/SKILL.md): grid/lightbox/reel prop-getters, markup, CSS, refs, and accessibility.
+
+Read both files before Phase 7 integration. These are repository-local documents;
+no global skill installation is required. To use them in a fresh coding session,
+explicitly ask the assistant to read their paths; do not assume automatic discovery
+under this repository's `skills/` folder. Record actual use in
+[docs/ai-usage.md](docs/ai-usage.md).
 
 ## Technology
 

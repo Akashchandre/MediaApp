@@ -4,10 +4,10 @@ Last updated: 2026-09-23
 
 ## Current status
 
-- Latest completed phase: Phase 5 — Headless native UI
-- Next phase: Phase 6 — AI skills (not started)
+- Latest completed phase: Phase 6 — AI skills and integration rehearsal
+- Current phase: Phase 7 — React web application (automated verification passed; live-browser checks pending)
 - Overall: In progress
-- Blockers: None
+- Blockers: None for automated verification. Live API/browser checks remain.
 
 ## Phase status
 
@@ -18,8 +18,8 @@ Last updated: 2026-09-23
 | 3. Platform wrappers | Complete | 22 shared behavior tests plus export parity; lint, typecheck, boundaries, builds pass |
 | 4. Headless web UI | Complete | 11 fixture tests; full verification passes with 41 tests |
 | 5. Headless native UI | Complete | 11 native-prop hook tests; full verification passes with 52 tests |
-| 6. AI skills | Not started | — |
-| 7. Web application | Not started | — |
+| 6. AI skills | Complete | Both skill validators pass; 4 integration tests; full verification passes with 56 tests |
+| 7. Web application | Implemented; live-browser checks pending | Full verification passes: 65 tests in 8 files, lint, types, boundaries, and production builds |
 | 8. Verification/docs | Not started | — |
 
 ## Decisions
@@ -31,7 +31,9 @@ Last updated: 2026-09-23
 
 ## Next action
 
-Begin Phase 6 when requested: write two AI skills against the actual data/UI APIs.
+Restart any dev server started before `apps/web/vite.config.js` was added, then
+enter a Pexels key in the browser and check photo/video journeys before closing
+Phase 7 and starting final delivery work.
 
 ## Phase 3 completion
 
@@ -77,3 +79,52 @@ Begin Phase 6 when requested: write two AI skills against the actual data/UI API
 - Native-prop behavior is tested via a React hook harness in jsdom; no React Native
   renderer, Metro build, emulator, or device validation has been performed.
 - The web application remains the foundation screen until Phase 7 integration.
+
+## Phase 6 completion
+
+- Committed Phase 5 as `f4e6f66` before starting skill authoring.
+- Created `skills/media-data/SKILL.md` and `skills/media-ui/SKILL.md` against actual exported APIs.
+- Skill-creator guidance kept both documents focused on integration decisions and package boundaries.
+- Read both skills and used them for `apps/web/src/examples/SkillWiringExample.jsx`;
+  the rehearsal is not mounted by App and does not change the visible foundation screen.
+- Added 4 consumer tests covering activity wiring, pagination retry, initial errors,
+  empty results, query reset, and event cleanup.
+- Both skills pass the bundled `quick_validate.py` validator.
+- `npm run verify` passed: 56 tests in 6 files, lint, typecheck,
+  dependency checks, and core/web builds.
+- `docs/ai-usage.md` records actual skill use, artifacts, results, and pending full-app evidence.
+- Full-app skill demonstration belongs to Phase 7; the phase checklist now places
+  that dependent verification alongside the app build rather than claiming it is already done.
+- Phase 6 changes are currently uncommitted. No live API key, browser downloads,
+  deployment, or device behavior was verified in this phase.
+
+## Phase 7 implementation (verification pending)
+
+- Read both repository skills before composing the actual app with public wrapper/UI hooks.
+- Replaced the foundation screen with Frameflow: a responsive connection screen,
+  in-memory key entry/disconnect, photo/video browsing, submitted search, suggestions,
+  pagination, and loading/error/empty states.
+- Added a photo lightbox with navigation and download-request tracking, plus
+  equal-height video reels with active playback, inactive pause, and failure notices.
+- Added session activity subscriptions, creator/Pexels attribution, image fallback,
+  and app-owned responsive CSS. No new dependencies were needed.
+- Added 7 fixture-backed app tests in `apps/web/test/app.test.jsx`. These tests
+  are not yet run; the previously passing 56 tests refer only to Phase 6's source.
+- `npm run verify` was rejected by automatic approval review due to its usage
+  limit, before execution. Current lint, tests, and production build are unverified.
+- No live API key or real-browser layout/playback/download behavior was checked.
+- Phase 6 and Phase 7 changes remain uncommitted.
+
+## Blank-screen fix and verification follow-up
+
+- Reproduced the cause from the server's `/src/main.jsx` response: JSX compiled
+  to `React.createElement` without a React binding, preventing initial rendering.
+- Added `apps/web/vite.config.js` to enable the automatic JSX runtime. No new
+  dependency or API key is required to display the connection screen.
+- Added two startup regression tests using the actual web compiler configuration,
+  because Vitest's JSX defaults had masked the web configuration problem.
+- `npm run verify` now passes: 65 tests in 8 files, lint, typecheck, boundaries,
+  and core/web production builds. The prior approval blocker is resolved.
+- A fresh local server served the automatic-runtime imports for the entry/app
+  modules. Existing servers must restart to pick up the newly added config.
+- Real-browser visual checks and live Pexels journeys remain unverified.

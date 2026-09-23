@@ -39,17 +39,19 @@
 
 ## Phase 6 — AI skills
 
-- [ ] Write the data-wiring `SKILL.md` against actual wrapper APIs.
-- [ ] Write the component-usage `SKILL.md` against actual UI APIs.
-- [ ] Record how the skills guided the app implementation.
+- [x] Write the data-wiring `SKILL.md` against actual wrapper APIs.
+- [x] Write the component-usage `SKILL.md` against actual UI APIs.
+- [x] Validate both skills and record a skill-guided integration rehearsal.
 
 ## Phase 7 — React web application
 
-- [ ] Add in-memory API-key configuration.
-- [ ] Add curated photos, search, kind switching, pagination, and retry states.
-- [ ] Wire photo grid to lightbox and video results to reels.
-- [ ] Wire view/download activity events and Pexels attribution.
-- [ ] Add responsive consumer-owned CSS.
+- [x] Read both skills before implementation and record their use in the full app.
+- [x] Add in-memory API-key configuration.
+- [x] Add curated photos, search, kind switching, pagination, and retry states.
+- [x] Wire photo grid to lightbox and video results to reels.
+- [x] Wire view/download activity events and Pexels attribution.
+- [x] Add responsive consumer-owned CSS.
+- [ ] Run app tests and full verification; check the live photo/video browser journey.
 
 ## Phase 8 — Verification, docs, and deployment readiness
 
