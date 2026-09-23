@@ -1,0 +1,12 @@
+# Install and build from the npm workspace root, not apps/web.
+[build]
+  base = "."
+  command = "npm run verify"
+  publish = "apps/web/dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+  NPM_FLAGS = "--include=dev"
+
+# No API keys belong in this file. The app asks for a key at runtime.
+# There are no client-side URL routes, functions, or API proxy rewrites.

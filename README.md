@@ -19,7 +19,7 @@ The core is TypeScript. Wrappers, UI libraries, and the web app use JavaScript/J
 ## Commands
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -49,7 +49,19 @@ remain pending. Library usage is documented in
 See [native UI docs](./docs/components-native.md) for FlatList/Modal contracts
 and the local-data native fixture screen.
 
-Before building the full app, read the repository-local
+Before changing the app integration, read the repository-local
 [data skill](./skills/media-data/SKILL.md) and [UI skill](./skills/media-ui/SKILL.md).
 [AI usage evidence](./docs/ai-usage.md) records the tested integration rehearsal,
-Phase 7 implementation, and its pending verification.
+Phase 7 implementation, and remaining live-browser verification.
+
+## Netlify deployment
+
+The root `netlify.toml` uses repository-root installation, Node 24,
+`npm run verify`, and publish directory `apps/web/dist`. No API-key environment
+variable is needed. Do not set the base directory to `apps/web`.
+
+Follow [the Netlify guide](./docs/deployment.md) for importing the repository,
+local production checks, and troubleshooting. No site has been deployed yet.
+The full [SDK reference](./docs/sdk.md) and
+[verification/submission checklist](./docs/verification.md) cover behavior,
+limitations, and remaining acceptance checks.

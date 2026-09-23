@@ -43,8 +43,8 @@ export function Example({ apiKey }) {
 }
 ```
 
-This minimal example demonstrates data hooks only; the demo app will connect
-the independent UI hooks in Phase 7. Native consumers supply native markup.
+This minimal example demonstrates data hooks only; `apps/web/src/App.jsx`
+connects the independent UI hooks. Native consumers supply native markup.
 
 | Export | Contract |
 |---|---|
@@ -72,4 +72,4 @@ item order and values; wrappers do not normalize or deduplicate media.
 The two implementations intentionally remain self-contained to preserve package
 boundaries. The shared behavior suite runs against both exports; changes must pass
 both variants. These tests exercise React hooks in jsdom, not a native device or
-React Native renderer. A native UI harness belongs to Phase 5.
+React Native renderer. Native UI fixture contracts are in [native UI docs](./components-native.md).

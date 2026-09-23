@@ -99,3 +99,19 @@ After approval became available, `npm run verify` passed with 65 tests in 8 file
 lint, types, boundary checks, and production builds. This supersedes the pending
 automated verification above. A fresh dev server's HTTP responses confirmed
 automatic JSX imports; no browser visual or live-Pexels verification is claimed.
+
+## Phase 8: Netlify preparation
+
+At the user's request, committed the existing app/skills/startup work as
+`d65aa97` and prepared Netlify deployment files. Consulted Netlify's official
+monorepo, file-based configuration, and dependency documentation (linked in
+the deployment guide). No account connection or external deployment was made.
+
+Added root `netlify.toml` and `.nvmrc`, ignored `.netlify` state, documented the
+actual SDK semantics/limitations from source, and added deployment and acceptance
+checklists. No extra package or global tool installation was needed.
+
+The configured `npm run verify` command passed locally: 65 tests in 8 files,
+lint, types, boundaries, and production builds. Checked local documentation
+links and diff whitespace. This run used Node 20.19.4 on Windows; the configured
+Node 24/Linux Netlify build and real-browser/live-key checks remain pending.

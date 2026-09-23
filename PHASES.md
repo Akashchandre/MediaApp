@@ -51,11 +51,13 @@
 - [x] Wire photo grid to lightbox and video results to reels.
 - [x] Wire view/download activity events and Pexels attribution.
 - [x] Add responsive consumer-owned CSS.
-- [ ] Run app tests and full verification; check the live photo/video browser journey.
+- [x] Run app tests and full verification.
+- [ ] Check the live photo/video browser journey.
 
 ## Phase 8 — Verification, docs, and deployment readiness
 
-- [ ] Complete SDK and component documentation.
-- [ ] Run lint, typecheck, boundary checks, tests, and production builds.
-- [ ] Document limitations, scope decisions, and AI assistance.
-- [ ] Prepare deployment and submission instructions.
+- [x] Complete SDK and component documentation.
+- [x] Run lint, typecheck, boundary checks, tests, and production builds.
+- [x] Document limitations, scope decisions, and AI assistance.
+- [x] Prepare Netlify configuration, deployment, and submission instructions.
+- [ ] Record the first successful Netlify build and complete deployed browser acceptance checks.

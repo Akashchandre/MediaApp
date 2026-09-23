@@ -169,5 +169,5 @@ The fixture suite covers generic selection, handler composition/cancellation,
 pagination guards, modal keyboard/focus behavior, active reel changes, keyboard
 paging, resizing, empty data, refs, and cleanup. jsdom has no layout or top layer:
 dialog methods and dimensions are mocked. Real-browser scroll snapping, native
-background isolation, and video playback still need integration verification
-when the web app is assembled.
+background isolation, and video playback still need the real-browser checks in
+[the verification checklist](./verification.md).

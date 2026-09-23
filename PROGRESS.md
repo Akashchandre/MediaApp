@@ -5,9 +5,9 @@ Last updated: 2026-09-23
 ## Current status
 
 - Latest completed phase: Phase 6 — AI skills and integration rehearsal
-- Current phase: Phase 7 — React web application (automated verification passed; live-browser checks pending)
+- Current phase: Phase 8 — Netlify readiness prepared; cloud build and live-browser acceptance pending
 - Overall: In progress
-- Blockers: None for automated verification. Live API/browser checks remain.
+- Blockers: No local verification blocker. Netlify repository/site connection and browser checks with a real Pexels key remain.
 
 ## Phase status
 
@@ -20,7 +20,7 @@ Last updated: 2026-09-23
 | 5. Headless native UI | Complete | 11 native-prop hook tests; full verification passes with 52 tests |
 | 6. AI skills | Complete | Both skill validators pass; 4 integration tests; full verification passes with 56 tests |
 | 7. Web application | Implemented; live-browser checks pending | Full verification passes: 65 tests in 8 files, lint, types, boundaries, and production builds |
-| 8. Verification/docs | Not started | — |
+| 8. Verification/docs | Local readiness complete; deployment acceptance pending | 65 tests, lint, types, boundaries, builds, and local documentation links pass; Netlify Node 24/Linux build not yet run |
 
 ## Decisions
 
@@ -31,9 +31,10 @@ Last updated: 2026-09-23
 
 ## Next action
 
-Restart any dev server started before `apps/web/vite.config.js` was added, then
-enter a Pexels key in the browser and check photo/video journeys before closing
-Phase 7 and starting final delivery work.
+For the simplest deployment, run `npm run build` and upload `apps/web/dist`
+to Netlify Drop using `docs/deployment.md`. Repository-connected deployment
+remains optional. Run the browser checklist in `docs/verification.md` before
+marking live deployment or Phase 7 acceptance complete.
 
 ## Phase 3 completion
 
@@ -128,3 +129,21 @@ Phase 7 and starting final delivery work.
 - A fresh local server served the automatic-runtime imports for the entry/app
   modules. Existing servers must restart to pick up the newly added config.
 - Real-browser visual checks and live Pexels journeys remain unverified.
+
+## Phase 8 — Netlify readiness
+
+- Committed the prior Phase 6/7 implementation and blank-screen fix as `d65aa97`.
+- Added root `netlify.toml`: repository-root base, `npm run verify` build command,
+  `apps/web/dist` publish folder, Node 24, and dev dependencies included.
+- Added `.nvmrc` for the target runtime and ignored local `.netlify` state.
+- Added the SDK reference, Netlify setup/submission guide, and browser acceptance
+  checklist. Corrected stale wrapper/component documentation and linked the guides.
+- No shared API key, new backend, dependency, Netlify site, or public deployment
+  was created. Keys remain runtime-only in the browser.
+- Re-ran `npm run verify`: 65 tests in 8 files, lint, types, dependency boundaries,
+  and core/web production builds pass locally on Node 20.19.4/Windows.
+- Local Markdown links and `git diff --check` pass. Netlify's Node 24/Linux
+  environment still requires its first build; local success is not cloud evidence.
+- Added simple build-and-upload instructions for the user's preferred manual
+  deployment workflow. Live API/browser acceptance, a verified deployment URL,
+  and a credential-free implementation transcript remain submission tasks.

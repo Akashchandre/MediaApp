@@ -4,7 +4,7 @@
 
 `MediaItem` is a discriminated union with common fields (`id`, `kind`, `width`, `height`, creator attribution, Pexels URL, preview URL) and kind-specific image or video sources.
 
-`MediaPage` contains `items`, `page`, `perPage`, `hasNextPage`, and an optional `nextPage` value.
+`MediaPage` contains `items`, `page`, `perPage`, `hasNextPage`, and `nextPage` (number or null).
 
 ## Core client
 
@@ -21,6 +21,9 @@ client.clearCache();
 ```
 
 The client attaches authentication only inside its HTTP transport, normalizes Pexels data, reuses completed requests for a short TTL, and shares identical requests that are already running.
+
+See [the SDK reference](./sdk.md) for exact types, defaults, errors, cache,
+cancellation, event behavior, and limitations.
 
 ## Wrapper contract
 
