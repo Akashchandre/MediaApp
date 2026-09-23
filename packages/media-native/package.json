@@ -1,0 +1,10 @@
+{
+  "name": "@headless-media/native",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": { ".": "./src/index.js" },
+  "dependencies": { "@headless-media/core": "0.1.0" },
+  "peerDependencies": { "react": ">=18", "react-native": ">=0.74" },
+  "peerDependenciesMeta": { "react-native": { "optional": true } }
+}

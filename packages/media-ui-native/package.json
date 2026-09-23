@@ -1,0 +1,9 @@
+{
+  "name": "@headless-media/ui-native",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": { ".": "./src/index.js" },
+  "peerDependencies": { "react": ">=18", "react-native": ">=0.74" },
+  "peerDependenciesMeta": { "react-native": { "optional": true } }
+}
