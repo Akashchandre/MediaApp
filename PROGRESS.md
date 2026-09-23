@@ -4,8 +4,8 @@ Last updated: 2026-09-23
 
 ## Current status
 
-- Latest completed phase: Phase 4 — Headless web UI
-- Next phase: Phase 5 — Headless native UI (not started)
+- Latest completed phase: Phase 5 — Headless native UI
+- Next phase: Phase 6 — AI skills (not started)
 - Overall: In progress
 - Blockers: None
 
@@ -17,7 +17,7 @@ Last updated: 2026-09-23
 | 2. Core SDK | Complete | 7 mocked SDK tests; no live API-key validation yet |
 | 3. Platform wrappers | Complete | 22 shared behavior tests plus export parity; lint, typecheck, boundaries, builds pass |
 | 4. Headless web UI | Complete | 11 fixture tests; full verification passes with 41 tests |
-| 5. Headless native UI | Not started | — |
+| 5. Headless native UI | Complete | 11 native-prop hook tests; full verification passes with 52 tests |
 | 6. AI skills | Not started | — |
 | 7. Web application | Not started | — |
 | 8. Verification/docs | Not started | — |
@@ -31,7 +31,7 @@ Last updated: 2026-09-23
 
 ## Next action
 
-Begin Phase 5 when requested: native grid, lightbox, and reel prop-getters.
+Begin Phase 6 when requested: write two AI skills against the actual data/UI APIs.
 
 ## Phase 3 completion
 
@@ -62,3 +62,18 @@ Begin Phase 5 when requested: native grid, lightbox, and reel prop-getters.
   CSS snapping, and video playback remain integration checks for later phases.
 - The app still shows its foundation screen; Phase 4 delivers library behavior.
   The visible media application is scheduled for Phase 7.
+
+## Phase 5 completion
+
+- Committed Phase 4 as `e745c99` before starting native UI work.
+- Exported JavaScript `useMediaGrid`, `useMediaLightbox`, and `useMediaReel` for native consumers.
+- FlatList grid data/keys/columns and end-reached pagination share a pending guard with the Load More button.
+- Controlled Modal visibility, native request-close/accessibility escape, bounded navigation, and Pressable accessibility props.
+- Reels supply fixed-height paging, stable viewability callbacks/configuration, confirmed active-item detection, and ref-based navigation.
+- Added native fixture screen and API/consumer-layout documentation in `docs/components-native.md`.
+- Enforced native source restrictions against DOM globals, React DOM, and the web UI package.
+- Verification: `npm run verify` passed with 52 tests in 5 files, lint, typecheck,
+  dependency checks, and core/web production builds.
+- Native-prop behavior is tested via a React hook harness in jsdom; no React Native
+  renderer, Metro build, emulator, or device validation has been performed.
+- The web application remains the foundation screen until Phase 7 integration.

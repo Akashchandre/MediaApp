@@ -32,10 +32,10 @@
 
 ## Phase 5 — Headless native UI
 
-- [ ] Implement native grid/list prop-getters.
-- [ ] Implement lightbox state and accessibility props.
-- [ ] Implement vertical reel and viewability prop-getters.
-- [ ] Test behavior with fixture data and no SDK imports.
+- [x] Implement native grid/list prop-getters.
+- [x] Implement lightbox state and accessibility props.
+- [x] Implement vertical reel and viewability prop-getters.
+- [x] Test behavior with fixture data and no SDK imports.
 
 ## Phase 6 — AI skills
 

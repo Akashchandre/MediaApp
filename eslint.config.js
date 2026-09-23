@@ -52,6 +52,15 @@ export default [
     },
   },
   {
+    files: ["packages/media-ui-native/src/**/*.js"],
+    rules: {
+      "no-restricted-globals": ["error", "window", "document", "HTMLElement", "IntersectionObserver", "ResizeObserver"],
+      "no-restricted-imports": ["error", {
+        patterns: ["@headless-media/core", "@headless-media/react", "@headless-media/native", "@headless-media/ui-react", "react-dom", "react-dom/*"],
+      }],
+    },
+  },
+  {
     files: ["apps/web/**/*.{js,jsx}"],
     rules: {
       "no-restricted-imports": [

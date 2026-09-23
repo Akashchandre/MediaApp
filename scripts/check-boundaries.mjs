@@ -21,7 +21,7 @@ const checks = [
   },
   {
     folder: "packages/media-ui-native/src",
-    forbidden: ["@headless-media/core", "@headless-media/react", "@headless-media/native"],
+    forbidden: ["@headless-media/core", "@headless-media/react", "@headless-media/native", "@headless-media/ui-react", "react-dom"],
   },
   {
     folder: "apps/web/src",
