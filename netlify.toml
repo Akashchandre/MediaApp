@@ -9,4 +9,5 @@
   NPM_FLAGS = "--include=dev"
 
 # No API keys belong in this file. The app asks for a key at runtime.
-# There are no client-side URL routes, functions, or API proxy rewrites.
+# /docs/, /docs/sdk/, and /docs/components/ are generated static HTML pages.
+# Directory index files support direct visits without a client-side rewrite.

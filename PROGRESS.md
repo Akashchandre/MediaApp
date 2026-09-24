@@ -162,3 +162,23 @@ deployment remains optional; no new site needs to be created.
 - Netlify's injected badge cannot be fixed by app spacing alone. Added the official
   dashboard switch instructions; the user's account setting was not changed.
 - Changes are uncommitted and not redeployed; `apps/web/dist` contains the new build.
+
+## Submission documentation website
+
+- Added static documentation at `/docs/`, `/docs/sdk/`, and `/docs/components/`.
+  The SDK page includes core and wrapper references; components include web and
+  native hooks, examples, styling contracts, and accessibility guidance.
+- A Vite plugin renders the existing Markdown with Marked at build/dev time.
+  The generated HTML and CSS ship inside `apps/web/dist/docs`; direct visits and
+  refreshes need no client-side routing rewrite or API key.
+- Added a Docs link to the app, workspace setup instructions, and deployment URL
+  guidance. Source guides remain the place to edit the published documentation.
+- `npm run verify` passed on Node 20.19.4/Windows: 68 tests in 9 files, lint,
+  types, dependency boundaries, and core/web production builds. New checks cover
+  rendered examples, local links/anchors, and direct development requests.
+- Checked the production preview in isolated headless Chrome at 320, 390, and
+  1440px: documentation and app entry rendered without page-level horizontal
+  overflow or runtime exceptions. Inspected SDK desktop and components mobile
+  screenshots. No live Pexels flow or native-device behavior was retested.
+- The complete `apps/web/dist` is ready for the user to upload. No deployment,
+  commit, or external account setting was changed.

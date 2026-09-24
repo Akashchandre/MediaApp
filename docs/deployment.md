@@ -11,7 +11,7 @@ from this coding session.
    already installed here; on a fresh checkout, run `npm ci` first.
 2. Log in to Netlify and open [Netlify Drop](https://app.netlify.com/drop).
 3. Drag the **`apps/web/dist`** folder into the upload area. This folder contains
-   `index.html` and `assets`; do not upload the whole repository or `node_modules`.
+   `index.html`, `assets`, and `docs`; do not upload the whole repository or `node_modules`.
 4. Open the URL Netlify provides. Enter your Pexels API key in the app to browse media.
 
 That is enough for manual deployment: no Git connection or Netlify CLI is needed.
@@ -64,9 +64,30 @@ publish the repository root or the source-only `apps/web` directory. The latest
 local verification used Node 20.19.4; the Node 24/Linux Netlify build still needs
 its first successful run. No cloud-build success is claimed.
 
-The app currently uses only `/`; search and selection are React state, not URL
-routes. No catch-all rewrite is necessary. Add routing rules only if URL-based
-client routes are introduced later.
+The app uses `/`; search and selection are React state, not URL routes. The
+documentation is generated as static directory-index pages at `/docs/`,
+`/docs/sdk/`, and `/docs/components/`. Direct visits and refreshes work without
+a catch-all rewrite. These pages also work with `npm run dev` and preview.
+
+## Documentation URLs for submission
+
+The normal build includes both documentation sites in the same upload as the app.
+After uploading the complete `apps/web/dist` folder to your existing site, open:
+
+- SDK documentation: `https://moonlit-shortbread-e4f2c7.netlify.app/docs/sdk/`
+- Component documentation: `https://moonlit-shortbread-e4f2c7.netlify.app/docs/components/`
+
+These are the intended URLs after your next deployment, not a claim that the
+pages are already published. If Netlify assigns a different domain, replace the
+domain in both URLs. Open each link directly and refresh it before submitting.
+No API key is needed to read the documentation.
+
+The SDK page includes `docs/sdk.md` and `docs/wrappers.md`. The components page
+includes `docs/components.md` and `docs/components-native.md`. Edit those source
+files, then rebuild to update the website. `scripts/docs-site.mjs` generates
+navigation, heading anchors, tables, and examples; `scripts/docs-site.css` controls
+the documentation appearance. The Markdown renderer runs only during build/dev,
+and is not bundled into the media app. The app's **Docs** link opens the overview.
 
 ## Key handling and troubleshooting
 

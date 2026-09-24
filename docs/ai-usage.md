@@ -133,3 +133,19 @@ the dashboard removal instructions instead of claiming CSS could remove it.
 the new production preview in Chrome; results and limitations are recorded in
 `docs/verification.md`. No redeploy, commit, or Netlify account change was made
 during this fix. The rebuilt `apps/web/dist` is ready for manual upload.
+
+## Submission documentation pages
+
+Codex added a static documentation generator, matching styles, app navigation,
+workspace setup guidance, and route/link checks. Existing SDK/wrapper and
+web/native UI Markdown files provide the page content. The main agent reread
+the repository's media-data and media-ui skills to preserve the actual import
+boundaries, provider/key requirements, and prop-getter contracts in the guides.
+No subagents were used and no library APIs or data integration were changed.
+
+`npm run verify` passed: 68 tests in 9 files, lint, core types, dependency checks,
+and production builds. Production preview pages and the app entry were checked
+in headless Chrome at 320, 390, and 1440px, without runtime exceptions or
+page-level horizontal overflow; desktop SDK and mobile component screenshots
+were inspected. These checks do not retest live Pexels, playback, downloads,
+or native devices. The user will deploy the built folder; no deployment was made.

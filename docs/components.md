@@ -1,5 +1,9 @@
 # Headless web UI
 
+These packages are supplied as local npm workspaces, not published npm packages.
+Follow [workspace setup](./sdk.md#workspace-setup) first. Web examples can live in
+`apps/web/src`; run `npm run dev` from the repository root to try them.
+
 Import `useMediaGrid`, `useMediaLightbox`, and `useMediaReel` from
 `@headless-media/ui-react`. They accept arbitrary data and callbacks, import only
 React, and ship no markup or styles. They work without a provider, API key, or SDK.

@@ -1,5 +1,29 @@
 # Core SDK reference
 
+## Workspace setup
+
+The packages are local npm workspaces in the MediaApp repository; they have not
+been published to npm. To run the examples against the supplied packages:
+
+```bash
+git clone https://github.com/Akashchandre/MediaApp.git
+cd MediaApp
+npm ci
+npm run build -w @headless-media/core
+```
+
+Use Node 24 (the repository's configured target). Add React consumer examples
+inside `apps/web/src`, where npm links the workspace packages automatically.
+Run `npm run dev` from the root to start the app. For a standalone core consumer,
+use a script in this workspace after building core. Native examples belong in a
+React Native application that links the local native packages.
+
+The web app imports the React wrapper and the independent UI library. Direct
+core imports, such as the example below, are for framework-independent consumers;
+only wrappers import core in the application's dependency graph.
+
+## Standalone client quick start
+
 `@headless-media/core` is TypeScript without React/DOM imports. It uses `fetch`,
 `URLSearchParams`, and optional `AbortSignal`; supply a compatible `fetch` when
 the runtime does not provide one. Within this workspace, build core before using

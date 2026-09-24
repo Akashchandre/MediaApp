@@ -3,7 +3,7 @@
 ## Automated baseline
 
 `npm run verify` runs lint, TypeScript core checking, dependency boundaries,
-Vitest, and core/web production builds. Latest baseline: 65 tests in 8 files
+Vitest, and core/web production builds. Latest baseline: 68 tests in 9 files
 passed locally on Windows with Node 20.19.4. No live Pexels key is used in tests.
 
 Coverage includes SDK transport/models/cache/errors/events, shared wrapper
@@ -11,9 +11,24 @@ lifecycle/pagination/parity, independent web/native UI hooks, consumer skill
 wiring, app flows, and the actual Vite JSX configuration. Two startup regression
 tests protect against the previously blank screen caused by a missing JSX runtime.
 
+Documentation checks cover generated SDK/wrapper and web/native guides, escaped
+code examples, local navigation/anchors, and direct Vite development requests.
+The production build emits standalone HTML at `/docs/`, `/docs/sdk/`, and
+`/docs/components/`, with its stylesheet at `/docs/assets/docs.css`.
+
 These are behavioral tests, not a coverage-percentage or security-audit claim.
 jsdom mocks dialog methods, dimensions, and video playback. Native tests use a
 React hook harness, not a React Native renderer or device.
+
+## Documentation preview review (2026-09-24)
+
+Checked the documentation overview, SDK guide, component guide, and app entry
+on the local production preview in isolated headless Chrome at 320, 390, and
+1440px widths. No page-level horizontal overflow or runtime exceptions were
+observed. Inspected the SDK desktop and components mobile screenshots. Direct
+documentation visits displayed content without an API key. This was a local
+viewport-emulated check, not a deployed-site or physical-device test. The built
+folder is ready for the user's deployment; live API flows were not retested.
 
 ## Browser review evidence (2026-09-23)
 

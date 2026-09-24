@@ -1,5 +1,8 @@
 # Headless Media Ecosystem
 
+For a detailed folder-by-folder and step-by-step explanation of the project,
+read the [complete project walkthrough](./docs/project-guide.md).
+
 A take-home sample showing a portable Pexels media SDK, thin React and React Native adapters, independent headless UI hooks, and a React web application.
 
 ## Architecture
@@ -43,7 +46,7 @@ See [PHASES.md](./PHASES.md), [PROGRESS.md](./PROGRESS.md), and [docs/architectu
 
 Phases 1–6 are complete. Phase 7 implements the Frameflow web interface: search,
 photo grid/lightbox, video reels, pagination, and session activity. Automated
-verification passes with 65 tests and production builds; live-browser checks
+verification passes with 68 tests and production builds; full live-browser checks
 remain pending. Library usage is documented in
 [wrapper docs](./docs/wrappers.md) and [headless UI docs](./docs/components.md).
 See [native UI docs](./docs/components-native.md) for FlatList/Modal contracts
@@ -55,6 +58,12 @@ Before changing the app integration, read the repository-local
 Phase 7 implementation, and remaining live-browser verification.
 
 ## Netlify deployment
+
+The build also includes public documentation pages at `/docs/sdk/` (core and
+platform wrappers) and `/docs/components/` (web and native UI). Open `/docs/` for
+the documentation overview. These pages work in development and production,
+without an API key. Upload the entire `apps/web/dist` folder to deploy the app
+and both documentation pages together; see the [submission URL instructions](./docs/deployment.md#documentation-urls-for-submission).
 
 The root `netlify.toml` uses repository-root installation, Node 24,
 `npm run verify`, and publish directory `apps/web/dist`. No API-key environment
